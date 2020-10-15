@@ -1,0 +1,28 @@
+
+.main-title{
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 60px;
+color: #111430;
+}
+.main-p{
+    font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+color: #000000;
+width: 370px;
+letter-spacing: 0.005em;
+}
+.main-btn{
+    width: 170px;
+height: 45px;
+color: white;
+background-color: #111430;
+}
+.main-btn:hover{
+    color: #7AB259;
+}

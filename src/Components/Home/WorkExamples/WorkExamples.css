@@ -1,0 +1,27 @@
+.example-section{
+    height: 720px;
+    background-color: #111430;
+    margin-bottom: 100px;
+}
+.example-title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 43px;
+    text-align: center;
+    letter-spacing: 0.396px;
+    color: #FFFFFF;
+    margin: 60px 0;
+}
+.carousel-img{
+    width: 800px;
+    height: 500px;
+border-radius: 8px;
+border: 1px solid black;
+margin: 0 auto;
+}
+.carousel-img img{
+    width: 800px;
+    height: 500px;
+}

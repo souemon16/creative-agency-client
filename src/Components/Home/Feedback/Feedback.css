@@ -1,0 +1,10 @@
+.feedback-section{
+    margin-bottom: 250px;
+}
+.feedback-card{
+    border: 1px solid #BFBFBF;
+box-sizing: border-box;
+border-radius: 4px;
+height: 212px;
+padding: 30px;
+}

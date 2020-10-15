@@ -1,0 +1,31 @@
+.addAdmin{
+    height: 100vh;
+    width: 100%;
+}
+.addAdmin-section{
+    width: 75%;
+    min-height: 100vh;
+    float: right;
+}
+.addAdmin-title{
+    height: 80px;
+    margin: 0 35px;
+}
+.addAdmin-title h4{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 33px;
+color: #0C0C0C;
+}
+.addAdmin-form{
+    background-color: #F4F7FC;
+    height: 85vh;
+    padding-top: 50px;
+    border-radius: 5px;
+}
+.addAdmin-form form {
+    width: 570px;
+    margin-left: 80px;
+}

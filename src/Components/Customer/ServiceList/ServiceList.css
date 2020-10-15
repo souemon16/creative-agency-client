@@ -1,0 +1,57 @@
+.service-list{
+    height: 100vh;
+    width: 100%;
+}
+.service-list-section{
+    width: 75%;
+    min-height: 100vh;
+    float: right;
+}
+.service-list-title{
+    height: 80px;
+    margin: 0 35px;
+}
+.service-list-title h4{
+     /* font-family: Poppins; */
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 33px;
+color: #0C0C0C;
+}
+.service-section{
+    background-color: #F4F7FC;
+    height: 85vh;
+    padding-top: 50px;
+    border-radius: 5px;
+}
+.task{
+    width: 415px;
+height: 254px;
+background: #FFFFFF;
+border-radius: 20px;
+float: left;
+margin-left: 20px;
+margin-bottom: 20px;
+}
+.task img{
+    width: 72px;
+height: 74px;
+}
+.action{
+    width: 108px;
+height: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.task h5{
+    /* font-family: Poppins; */
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 16px;
+letter-spacing: 0.396px;
+color: #111430;
+margin: 30px 0;
+}

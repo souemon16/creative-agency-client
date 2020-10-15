@@ -1,0 +1,16 @@
+.footer-section{
+    background-color: #FBD062;
+    height: 590px;
+}
+.footer-title{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 34px;
+line-height: 43px;
+letter-spacing: 0.396px;
+color: #2D2D2D;
+}
+.copyright-title{
+    display: block;
+}
