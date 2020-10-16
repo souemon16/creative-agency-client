@@ -12,7 +12,7 @@ const HeaderMain = () => {
     return (
         <main className='container main-header mt-4'>
         <div className="row d-flex justify-content-around align-items-center">
-        <div className="col-md-5">
+        <div className="col-md-5 col-sm-11">
             <h1 className="main-title">
                 Let’s Grow Your
                 Brand To The
@@ -23,8 +23,8 @@ const HeaderMain = () => {
             </p>
             <button onClick={handleSearch} className="btn main-btn">Hire Us</button>
         </div>
-        <div className="col-md-6">
-        <img style={{width: '624.6px', height: '422.8px'}} src={sideImg} alt="side-img"/>
+        <div className="col-md-6 col-sm-12">
+        <img className='img-fluid' style={{width: '624.6px', height: '422.8px'}} src={sideImg} alt="side-img"/>
         </div>
         </div>
     </main>

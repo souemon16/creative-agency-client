@@ -1,23 +1,45 @@
-import React from 'react';
-import AdminSidenav from '../AdminSidenav/AdminSidenav';
+import React, { useContext, useState } from 'react';
+import { userContext } from '../../../App';
+import Sidenav from '../../Customer/Sidenav/Sidenav';
 import './AddAdmin.css';
 
 const AddAdmin = () => {
+
+    const [user, setUser] = useContext(userContext);
+    const [admin, setAdmin] = useState('');
+
+    const handleBlur = () => {
+        const newAdmin = document.getElementById('email').value;
+        setAdmin(newAdmin);
+    }
+
+    const handleAddAdmin = (e) => {
+        
+        fetch('http://localhost:5000/addAdmin', {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(admin)
+        })
+        .then(res => res.json())
+        .then(data => console.log("Admin Added"))
+
+            e.preventDefault();
+    }
     return (
         <main className="addAdmin">
-            <AdminSidenav />
+            <Sidenav />
             <div className="addAdmin-section">
                 <div className="addAdmin-title d-flex justify-content-between align-items-center">
                     <h4>Add Admin</h4>
-                    <h4> Name </h4>
+                    <h4> {user.userName} </h4>
                 </div>
                 <div className="addAdmin-form">
                     <form action="">
                     <div className='pl-4 pt-3' style={{width: '900px', height: '300px', backgroundColor: '#fff', borderRadius: '20px'}}>
                     <label htmlFor='email'>Email</label>
-                    <input style={{width: '450px'}} type="email" name="email" id="email" placeholder="jon@gmail.com" className="form-control"/>
+                    <input onBlur={handleBlur} style={{width: '450px'}} type="email" name="email" id="email" placeholder="jon@gmail.com" className="form-control" required/>
                     <br/>
-                    <button className='btn btn-success' type="submit">Submit</button>
+                    <button onClick={handleAddAdmin} className='btn btn-success' type="submit">Submit</button>
                     </div>
                     </form>
                 </div>

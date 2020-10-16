@@ -2,6 +2,9 @@
     height: 400px;
     margin-bottom: 100px;
     margin-top: 50px;
+    @media (max-width: 760px) {
+        margin-bottom: 500px;
+      }
 }
 .courses-section-title{
     font-family: Poppins;

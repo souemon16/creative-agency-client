@@ -15,7 +15,7 @@ const Courses = () => {
     const [service, setService] = useContext(serviceContext);
 
     const History = useHistory();
-    const handleOrder = (id) => {
+    const handleOrder = () => {
         History.push(`/order`);
     }
 
@@ -27,7 +27,7 @@ const Courses = () => {
 
                 <animated.div
                     onClick={handleOrder}
-                    className="col-md-3 course-card"
+                    className="col-sm-3 course-card"
                     onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
                     onMouseLeave={() => set({ xys: [0, 0, 1] })}
                     style={{ transform: props.xys.interpolate(trans) }}>
@@ -39,7 +39,7 @@ const Courses = () => {
 
                 <animated.div
                     onClick={handleOrder}
-                    className="col-md-3 course-card"
+                    className="col-sm-3 course-card"
                     onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
                     onMouseLeave={() => set({ xys: [0, 0, 1] })}
                     style={{ transform: props.xys.interpolate(trans) }}>
@@ -50,7 +50,7 @@ const Courses = () => {
 
                 <animated.div
                     onClick={handleOrder}
-                    className="col-md-3 course-card"
+                    className="col-sm-3 course-card"
                     onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
                     onMouseLeave={() => set({ xys: [0, 0, 1] })}
                     style={{ transform: props.xys.interpolate(trans) }}>

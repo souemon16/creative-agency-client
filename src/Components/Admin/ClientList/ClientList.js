@@ -1,22 +1,35 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './ClientList.css';
-import AdminSidenav from '../AdminSidenav/AdminSidenav';
+import Sidenav from '../../Customer/Sidenav/Sidenav';
 import { userContext } from '../../../App';
 
 const ClientList = () => {
 
     const [user, setUser] = useContext(userContext);
-    const [client, setClient] = useState({});
+    const [client, setClient] = useState([]);
     
     useEffect(() => {
         fetch('http://localhost:5000/client-list')
         .then(res => res.json())
         .then(data => setClient(data))
     }, [])
+
+    const handleStatus = () => {
+        const e = document.getElementById("status");
+        const status = e.options[e.selectedIndex].value;
+
+        fetch('http://localhost:5000/add-status', {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(status)
+        })
+        .then(res => res.json())
+        .then(data => console.log("Status Added"))
+    }
     console.log(client);
     return (
         <main className="client-list">
-            <AdminSidenav />
+            <Sidenav />
             <div className="client-section">
                 <div className="client-title d-flex justify-content-between align-items-center">
                     <h4>Services List</h4>
@@ -33,25 +46,25 @@ const ClientList = () => {
                                 <th scope="col">Status</th>
                             </tr>
                         </thead>
+                        <tbody>
                        {
                            client.map(data => 
-                            <tbody>
                             <tr>
                                 <th scope="row">{data.name}</th>
                                 <td>{data.email}</td>
                                 <td>{data.course}</td>
                                 <td>{data.detail}</td>
                                 <td>
-                                    <select id="status" name="Service Status">
-                                        <option className="text-warning" value="volvo">On Going</option>
-                                        <option className="text-danger" value="saab">Pending</option>
-                                        <option className="text-success" value="fiat">Done</option>
+                                    <select onChange={handleStatus} id="status" name="Service Status">
+                                        <option className="text-warning" value="On Going">On Going</option>
+                                        <option className="text-danger" value="Pending">Pending</option>
+                                        <option className="text-success" value="Done">Done</option>
                                     </select>
                                 </td>
                             </tr>
-                        </tbody>
                             )
                        }
+                       </tbody>
                     </table>
                 </div>
             </div>

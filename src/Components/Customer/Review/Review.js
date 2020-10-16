@@ -37,9 +37,9 @@ const Review = () => {
                 <form action="">
                     <input onBlur={handleBlur} type="text" name="name" id="name" placeholder="Your Name" className="form-control"/>
                     <br/>
-                    <input onBlur={handleBlur} type="text" name="name" id="name" placeholder="Company's Name / Designation" className="form-control"/>
+                    <input onBlur={handleBlur} type="text" name="company" id="company" placeholder="Company's Name / Designation" className="form-control"/>
                     <br/>
-                    <textarea onBlur={handleBlur} name="details" id="details" placeholder="description" cols="30" rows="5" className="form-control"></textarea>
+                    <textarea onBlur={handleBlur} name="description" id="description" placeholder="Description" cols="30" rows="5" className="form-control"></textarea>
                     <br/>
                     <button onClick={handleSubmit} className='btn main-btn' type="submit">Submit</button>
                     </form>

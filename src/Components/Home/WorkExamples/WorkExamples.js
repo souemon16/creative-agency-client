@@ -22,7 +22,7 @@ const WorkExamples = () => {
         <section className="container-fluid example-section d-flex flex-column align-items-center">
             <h1 className="text-center example-title">Here are some of <span style={{ color: '#7AB259' }}>our works</span></h1>
             <div className="container">
-                <Slider className='carousel-img' {...settings}>
+                <Slider className='col-md-12 col-sm-12 carousel-img' {...settings}>
                     <div>
                         <img src={exm1} alt="carousel-image" className="img-fluid" />
                     </div>

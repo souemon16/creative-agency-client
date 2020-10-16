@@ -14,11 +14,11 @@ const Footer = () => {
                     </div>
 
                     <div className="col-md-6 mb-5">
-                        <input type="email" name="email" id="email" placeholder="Your email address" className="form-control"/>
+                        <input type="email" name="email" id="email" placeholder="Your email address" className="form-control input-sm"/>
                         <br/>
                         <input type="text" name="name" id="name" placeholder="Your name / Company Name" className="form-control"/>
                         <br/>
-                        <textarea name="message" placeholder="Your message" id="" cols="30" rows="10" className="form-control"></textarea>
+                        <textarea name="message" placeholder="Your message" id="" cols="30" rows="10" className="form-control input-sm"></textarea>
                         <br/>
                         <button className="btn main-btn">Submit</button>
                         <br/>

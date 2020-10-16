@@ -54,9 +54,9 @@ function App() {
                 <ServiceList />
               </Route>
 
-              <Route path="/review">
+              <PrivateRoute path="/review">
                 <Review />
-              </Route>
+              </PrivateRoute>
 
               <PrivateRoute path='/client-list'>
                 <ClientList />

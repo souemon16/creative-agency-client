@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './Login.css';
 import logo from '../../images/logos/logo.png';
 import iconGoogle from '../../images/icons/google.png';
-import {Link} from "react-router-dom";
+import {Link, useHistory, useLocation} from "react-router-dom";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -13,6 +13,11 @@ firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
     const [user, setUser] = useContext(userContext);
+
+    // Redirect Page 
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
 
     const handleLogin = () => {
 
@@ -31,7 +36,9 @@ const Login = () => {
                 error: false,
             }
             setUser(userDetails);
-            // history.replace(from);
+            setUserToken();
+            sessionStorage.setItem('email', email);
+            history.replace(from);
           }).catch(function(error) {
             let errorCode = error.code;
             let errorMessage = error.message;
@@ -42,8 +49,19 @@ const Login = () => {
             }
             setUser(signInError);
           });
+
+          
         }
 
+        // Verify By ID Token 
+        const setUserToken = () => {
+            firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+            .then(function(idToken) {
+                sessionStorage.setItem('token', idToken)
+              }).catch(function(error) {
+                // Handle error
+              });
+        }
 
     return (
         <div id="login-section">

@@ -9,7 +9,7 @@ function PrivateRoute({ children, ...rest }) {
       <Route
         {...rest}
         render={({ location }) =>
-          user.isSignedIn ? (
+          ( user.isSignedIn ) ? (
             children
           ) : (
             <Redirect
