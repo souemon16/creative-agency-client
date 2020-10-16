@@ -9,24 +9,24 @@ const ClientList = () => {
     const [client, setClient] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:5000/client-list')
+        fetch('https://fathomless-reaches-81823.herokuapp.com/client-list')
         .then(res => res.json())
         .then(data => setClient(data))
     }, [])
 
-    const handleStatus = () => {
-        const e = document.getElementById("status");
+    const handleStatus = (id) => {
+        const e = document.getElementById("status").value;
         const status = e.options[e.selectedIndex].value;
 
-        fetch('http://localhost:5000/add-status', {
-            method: "POST",
+        fetch(`https://fathomless-reaches-81823.herokuapp.com/update/${id}`, {
+            method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(status)
         })
         .then(res => res.json())
         .then(data => console.log("Status Added"))
     }
-    console.log(client);
+
     return (
         <main className="client-list">
             <Sidenav />
@@ -55,7 +55,7 @@ const ClientList = () => {
                                 <td>{data.course}</td>
                                 <td>{data.detail}</td>
                                 <td>
-                                    <select onChange={handleStatus} id="status" name="Service Status">
+                                    <select onMouseLeave={handleStatus(client._id)} id="status" name="Service Status">
                                         <option className="text-warning" value="On Going">On Going</option>
                                         <option className="text-danger" value="Pending">Pending</option>
                                         <option className="text-success" value="Done">Done</option>

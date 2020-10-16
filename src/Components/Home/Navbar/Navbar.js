@@ -12,7 +12,7 @@ const Navbar = () => {
             <ul>
                 <Link style={{textDecoration: 'none'}} to='/'><li><a href="#">Home</a></li></Link>
                 <li><a href="#">Our Portfolio</a></li>
-                <li><a href="#">Our Team</a></li>
+                <Link to='/client-list'><li><a href="#">Our Admin</a></li></Link>
                 <li><a href="#">Contact Us</a></li>
                 <Link to='/login'><li><button className='btn nav-btn'>Login</button></li></Link>
             </ul>

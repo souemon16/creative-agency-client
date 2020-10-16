@@ -29,7 +29,7 @@ const Order = () => {
         formData.append('detail', client.detail)
         formData.append('price', client.price)
       
-        fetch('http://localhost:5000/addClient', {
+        fetch('https://fathomless-reaches-81823.herokuapp.com/addClient', {
           method: 'POST',
           body: formData
         })

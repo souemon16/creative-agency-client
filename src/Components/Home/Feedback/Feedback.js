@@ -6,7 +6,7 @@ const Feedback = () => {
     const [feedback, setFeedback] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/review-list')
+        fetch('https://fathomless-reaches-81823.herokuapp.com/review-list')
         .then(res => res.json())
         .then(data => setFeedback(data))
     }, [])

@@ -11,7 +11,7 @@ const Sidenav = () => {
     const [isAdmin, setIsAdmin] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://fathomless-reaches-81823.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: user.userEmail })

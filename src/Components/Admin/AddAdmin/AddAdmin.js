@@ -18,7 +18,7 @@ const AddAdmin = () => {
 
     const handleAddAdmin = (e) => {
         
-        fetch('http://localhost:5000/addAdmin', {
+        fetch('https://fathomless-reaches-81823.herokuapp.com/addAdmin', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(admin)

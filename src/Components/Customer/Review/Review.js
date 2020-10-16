@@ -16,7 +16,7 @@ const Review = () => {
    
     const handleSubmit = () => {
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://fathomless-reaches-81823.herokuapp.com/addReview', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(review)
