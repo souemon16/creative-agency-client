@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './ServiceList.css';
 import Sidenav from '../Sidenav/Sidenav';
 import graphics from '../../../images/icons/service2.png';
@@ -7,32 +7,14 @@ import { userContext } from '../../../App';
 
 const ServiceList = () => {
     const [user, setUser] = useContext(userContext);
-    const services = [ 
-        {
-            name: 'Graphics Design',
-            image: graphics,
-            description: 'Amazing flyers, social media posts and brand representations that would make your brand stand out.',
-            action: 'Pending'
-        },
-        {
-            name: 'Web development',
-            image: webDev,
-            description: 'With well written codes, we build amazing apps for all platforms, mobile and web apps in general.',
-            action: 'Done'
-        },
-        {
-            name: 'Graphics Design',
-            image: graphics,
-            description: 'Amazing flyers, social media posts and brand representations that would make your brand stand out.',
-            action: 'Pending'
-        },
-        {
-            name: 'Web development',
-            image: webDev,
-            description: 'With well written codes, we build amazing apps for all platforms, mobile and web apps in general.',
-            action: 'Done'
-        }
-    ]
+    const [services, setServices] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/course-list?email=${user.userEmail}`)
+        .then(res => res.json())
+        .then(data => setServices(data))
+    }, [])
+
     return (
         <main className="service-list">
             <Sidenav />
@@ -46,11 +28,11 @@ const ServiceList = () => {
                         services.map(data => 
                             <div className="task">
                                 <div className="d-flex justify-content-around align-items-center pt-3">
-                                    <img src={data.image} alt="task-Image"/>
+                                    <img src={`data:image/png;base64,${data.image.img}`} alt="task-Image"/>
                                     <span className="action badge badge-warning">{data.action}</span>
                                 </div>
-                            <h5 className="pl-5">{data.name}</h5>
-                            <p className="text-secondary pl-5">{data.description}</p>
+                            <h5 className="pl-5">{data.course}</h5>
+                            <p className="text-secondary pl-5">{data.detail}</p>
                             </div>
                         )
                     }

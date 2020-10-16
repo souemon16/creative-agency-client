@@ -50,9 +50,9 @@ function App() {
                 <Order />
               </PrivateRoute>
 
-              <Route path='/service-list'>
+              <PrivateRoute path='/service-list'>
                 <ServiceList />
-              </Route>
+              </PrivateRoute>
 
               <PrivateRoute path="/review">
                 <Review />

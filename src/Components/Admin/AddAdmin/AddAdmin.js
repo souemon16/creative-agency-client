@@ -6,10 +6,13 @@ import './AddAdmin.css';
 const AddAdmin = () => {
 
     const [user, setUser] = useContext(userContext);
-    const [admin, setAdmin] = useState('');
+    const [admin, setAdmin] = useState("");
+    console.log(admin);
 
-    const handleBlur = () => {
-        const newAdmin = document.getElementById('email').value;
+    const handleBlur = (e) => {
+        // const newAdmin = document.getElementById('email').value;
+        const newAdmin = {...admin};
+        newAdmin[e.target.name] = e.target.value;
         setAdmin(newAdmin);
     }
 

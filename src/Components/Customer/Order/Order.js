@@ -51,13 +51,13 @@ const Order = () => {
                 </div>
                 <div className="order-form">
                     <form onSubmit={handleSubmit}>
-                    <input onBlur={handleBlur} type="text" name="name" id="name" placeholder="Your Name / Company Name" className="form-control"/>
+                    <input onBlur={handleBlur} type="text" name="name" id="name" placeholder="Your Name / Company Name" className="form-control" required/>
+                    <br/> 
+                    <input onBlur={handleBlur} type="email" name="email" id="email" placeholder="Your Email Address" className="form-control" required/>
                     <br/>
-                    <input onBlur={handleBlur} type="email" name="email" id="email" placeholder="Your Email Address" className="form-control"/>
+                    <input onBlur={handleBlur} type="text" name="course" id="course" placeholder="Course Name" className="form-control" required/>
                     <br/>
-                    <input onBlur={handleBlur} type="text" name="course" id="course" placeholder="Course Name" className="form-control"/>
-                    <br/>
-                    <textarea onBlur={handleBlur} name="detail" id="detail" placeholder="Project Details" cols="30" rows="5" className="form-control"></textarea>
+                    <textarea onBlur={handleBlur} name="detail" id="detail" placeholder="Project Details" cols="30" rows="5" className="form-control" required></textarea>
                     <br/>
                     <input onBlur={handleBlur} type="number" name="price" id="price" placeholder="Price" />
                     <input onChange={handleFileChange} type="file" name="file" id="file" required/>
