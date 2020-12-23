@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './ClientList.css';
-import Sidenav from '../../Customer/Sidenav/Sidenav';
 import { userContext } from '../../../App';
+import AdminSidenav from '../AdminSidenav/AdminSidenav';
 
 const ClientList = () => {
 
@@ -14,22 +14,22 @@ const ClientList = () => {
         .then(data => setClient(data))
     }, [])
 
-    const handleStatus = (id) => {
-        const e = document.getElementById("status").value;
-        const status = e.options[e.selectedIndex].value;
+    // const handleStatus = (id) => {
+    //     const e = document.getElementById("status").value;
+    //     const status = e.options[e.selectedIndex].value;
 
-        fetch(`https://fathomless-reaches-81823.herokuapp.com/update/${id}`, {
-            method: "PATCH",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(status)
-        })
-        .then(res => res.json())
-        .then(data => console.log("Status Added"))
-    }
+    //     fetch(`https://fathomless-reaches-81823.herokuapp.com/update/${id}`, {
+    //         method: "PATCH",
+    //         headers: {'Content-Type': 'application/json'},
+    //         body: JSON.stringify(status)
+    //     )}
+    //     .then(res => res.json())
+    //     .then(data => console.log("Status Added"))
+    // }
 
     return (
         <main className="client-list">
-            <Sidenav />
+            <AdminSidenav />
             <div className="client-section">
                 <div className="client-title d-flex justify-content-between align-items-center">
                     <h4>Services List</h4>
@@ -55,7 +55,7 @@ const ClientList = () => {
                                 <td>{data.course}</td>
                                 <td>{data.detail}</td>
                                 <td>
-                                    <select onMouseLeave={handleStatus(client._id)} id="status" name="Service Status">
+                                    <select  id="status" name="Service Status">
                                         <option className="text-warning" value="On Going">On Going</option>
                                         <option className="text-danger" value="Pending">Pending</option>
                                         <option className="text-success" value="Done">Done</option>

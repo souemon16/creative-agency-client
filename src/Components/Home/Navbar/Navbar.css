@@ -10,6 +10,9 @@
     width: 150px;
     height: 47px;
 }
+.navbar .link{
+    text-decoration: none;
+}
 .navbar ul{
     text-align: center;
     display: flex;
@@ -21,6 +24,7 @@
     margin: 0 12px;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 .navbar ul li a{
     text-decoration: none;

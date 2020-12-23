@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import './AddServices.css';
 import Sidenav from '../../Customer/Sidenav/Sidenav';
 import { serviceContext, userContext } from '../../../App';
+import AdminSidenav from '../AdminSidenav/AdminSidenav';
 
 const AddServices = () => {
 
@@ -41,7 +42,7 @@ const AddServices = () => {
           }
     return (
         <main className="add-services">
-            <Sidenav/>
+            <AdminSidenav />
             <div className="client-section">
                 <div className="client-title d-flex justify-content-between align-items-center">
                     <h4>Services List</h4>
